@@ -1,0 +1,69 @@
+.card {
+  background: #ffffff;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: #ff8c42;
+  box-shadow: 0 0 20px rgba(255, 140, 66, 0.15);
+  transform: translateY(-2px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #ff8c42 0%, #ff7a1f 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.change {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.change.positive {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.change.negative {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 13px;
+  color: #999999;
+  margin: 0;
+  font-weight: 500;
+}
+
+.value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0;
+}
