@@ -9,32 +9,28 @@ import { calculateUserMetrics, formatNumber, type User } from "@/utils/user-metr
 
 export default function DashboardContent() {
   const [users, setUsers] = useState<User[]>([
-    // 🇰🇷 Korea
-    { id: 1, name: "Park Min-jun", email: "minjun.park@naver.com", status: "active", joinDate: "2025-10-23", country: "Korea" },
-    { id: 2, name: "Kim Ji-woo", email: "jiwoo.kim@gmail.com", status: "active", joinDate: "2025-10-22", country: "Korea" },
-    { id: 3, name: "Lee Seo-yeon", email: "seoyeon.lee@daum.net", status: "active", joinDate: "2025-10-21", country: "Korea" },
-    { id: 4, name: "Choi Eun-seo", email: "eunseo.choi@kakao.com", status: "inactive", joinDate: "2025-10-20", country: "Korea" },
-    { id: 5, name: "Han Jae-hyun", email: "jaehyun.han@naver.com", status: "active", joinDate: "2025-10-19", country: "Korea" },
-    { id: 6, name: "Yoon So-min", email: "somin.yoon@kakao.com", status: "active", joinDate: "2025-10-18", country: "Korea" },
+  { id: 1, name: "nguyen thao vy", email: "thaovy.nguyen@gmail.com", status: "active", joinDate: "2025-10-23", country: "Vietnam" },
+  { id: 2, name: "Sarah J.", email: "sarah.j@icloud.com", status: "active", joinDate: "2025-10-22", country: "USA" },
+  { id: 3, name: "jiwoo_kim", email: "jiwoo.kim@kakao.com", status: "active", joinDate: "2025-10-21", country: "Korea" },
+  { id: 4, name: "mike chen", email: "mike.chen@gmail.com", status: "active", joinDate: "2025-10-21", country: "USA" },
+  { id: 5, name: "LeMinhAnh", email: "le.minhanh@outlook.com", status: "active", joinDate: "2025-10-20", country: "Vietnam" },
+  { id: 6, name: "ParkM", email: "minjun.park@naver.com", status: "active", joinDate: "2025-10-20", country: "Korea" },
+  { id: 7, name: "olivia.c", email: "olivia.carter@yahoo.com", status: "active", joinDate: "2025-10-19", country: "USA" },
+  { id: 8, name: "HuongDang", email: "huong.dang@icloud.com", status: "inactive", joinDate: "2025-10-19", country: "Vietnam" },
+  { id: 9, name: "seo yeon lee", email: "seoyeon.lee@daum.net", status: "active", joinDate: "2025-10-19", country: "Korea" },
+  { id: 10, name: "david.a", email: "david.anderson@gmail.com", status: "active", joinDate: "2025-10-18", country: "USA" },
+  { id: 11, name: "quynh nhu v", email: "quynhnhu.vu@outlook.com", status: "active", joinDate: "2025-10-18", country: "Vietnam" },
+  { id: 12, name: "eunseo choi", email: "eunseo.choi@kakao.com", status: "inactive", joinDate: "2025-10-18", country: "Korea" },
+  { id: 13, name: "jacob miller", email: "jacob.miller@hotmail.com", status: "inactive", joinDate: "2025-10-17", country: "USA" },
+  { id: 14, name: "tran.linh", email: "linh.tran@yahoo.com", status: "inactive", joinDate: "2025-10-17", country: "Vietnam" },
+  { id: 15, name: "jaehyun_h", email: "jaehyun.han@naver.com", status: "active", joinDate: "2025-10-17", country: "Korea" },
+  { id: 16, name: "emily.rdz", email: "emily.rodriguez@outlook.com", status: "inactive", joinDate: "2025-10-16", country: "USA" },
+  { id: 17, name: "hoangvu98", email: "vu.hoang@gmail.com", status: "active", joinDate: "2025-10-16", country: "Vietnam" },
+  { id: 18, name: "somin y", email: "somin.yoon@kakao.com", status: "active", joinDate: "2025-10-15", country: "Korea" },
+  { id: 19, name: "datbui", email: "tiendat.bui@yahoo.com", status: "active", joinDate: "2025-10-15", country: "Vietnam" },
+  { id: 20, name: "JessLee", email: "jessica.lee@gmail.com", status: "active", joinDate: "2025-10-14", country: "USA" },
+]);
 
-    // 🇺🇸 USA
-    { id: 7, name: "Sarah Johnson", email: "sarah.johnson@yahoo.com", status: "active", joinDate: "2025-10-23", country: "USA" },
-    { id: 8, name: "Michael Chen", email: "michael.chen@gmail.com", status: "active", joinDate: "2025-10-22", country: "USA" },
-    { id: 9, name: "Emily Rodriguez", email: "emily.rodriguez@outlook.com", status: "inactive", joinDate: "2025-10-21", country: "USA" },
-    { id: 10, name: "David Anderson", email: "david.anderson@gmail.com", status: "active", joinDate: "2025-10-20", country: "USA" },
-    { id: 11, name: "Olivia Carter", email: "olivia.carter@icloud.com", status: "active", joinDate: "2025-10-19", country: "USA" },
-    { id: 12, name: "Jacob Miller", email: "jacob.miller@hotmail.com", status: "inactive", joinDate: "2025-10-18", country: "USA" },
-
-    // 🇻🇳 Vietnam
-    { id: 13, name: "Nguyễn Tuấn", email: "tuan.nguyen@gmail.com", status: "active", joinDate: "2025-10-23", country: "Vietnam" },
-    { id: 14, name: "Trần Linh", email: "linh.tran@yahoo.com", status: "inactive", joinDate: "2025-10-22", country: "Vietnam" },
-    { id: 15, name: "Lê Minh Anh", email: "minhanh.le@outlook.com", status: "active", joinDate: "2025-10-21", country: "Vietnam" },
-    { id: 16, name: "Phạm Gia Bảo", email: "giabao.pham@gmail.com", status: "active", joinDate: "2025-10-20", country: "Vietnam" },
-    { id: 17, name: "Đặng Thị Hương", email: "huong.dang@icloud.com", status: "inactive", joinDate: "2025-10-19", country: "Vietnam" },
-    { id: 18, name: "Hoàng Vũ", email: "vu.hoang@gmail.com", status: "active", joinDate: "2025-10-18", country: "Vietnam" },
-    { id: 19, name: "Vũ Quỳnh Như", email: "quynhnhu.vu@outlook.com", status: "active", joinDate: "2025-10-18", country: "Vietnam" },
-    { id: 20, name: "Bùi Tiến Đạt", email: "tiendat.bui@yahoo.com", status: "active", joinDate: "2025-10-17", country: "Vietnam" },
-  ])
 
   const [metrics, setMetrics] = useState({
     totalUsers: 0,
